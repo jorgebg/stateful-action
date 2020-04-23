@@ -1,0 +1,19 @@
+name: 'Stateful'
+description: 'An utility for managing the state of your application on a reserved branch.'
+inputs:
+  git_author_name:
+    description: 'Author name used for the commits'
+    default: Stateful Action Bot
+  git_author_email:
+    description: 'Author email used for the commits'
+    default: stateful-action@example.com
+  branch:
+    description: 'Name of the branch that keeps the state'
+    default: state
+  backup:
+    description: 'Number of commits to keep as backup'
+    default: 100
+runs:
+  using: node12
+  main: main.js
+  post: post.js

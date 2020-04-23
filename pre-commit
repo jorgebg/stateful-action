@@ -1,0 +1,7 @@
+#!/bin/bash
+
+if git diff --cached --name-status | grep scripts/
+then
+    make
+    git add main.js post.js
+fi

@@ -1,0 +1,21 @@
+name: Example workflow
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    # Uses the stateful action
+    - uses: ./
+      with:
+        backup: 2
+
+    - name: Test Run
+      run: echo $(date)\n >> .state/data.txt
