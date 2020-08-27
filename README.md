@@ -7,7 +7,7 @@ This action is an utility for managing the state of your application on a branch
 It wraps the run like this:
 
 1. `state` branch is checked out as a [worktree](https://git-scm.com/docs/git-worktree) under a folder named `.state` (which must be ignored by `.gitignore`). Please check [`scripts/main.sh`](scripts/main.sh).
-2. Your application writes it's state into the `.state` folder.
+2. Your application writes its state into the `.state` folder.
 3. `state` branch new state is pushed to origin. Please check [`scripts/post.sh`](scripts/post.sh):
     * Changes are commited and pushed.
     * Old commits on `state` branch are squashed and force-pushed.
