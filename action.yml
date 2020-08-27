@@ -1,4 +1,4 @@
-name: 'Stateful'
+name: 'Stateful Action'
 description: 'An utility for managing the state of your application on a reserved branch.'
 inputs:
   git_author_name:
