@@ -1,4 +1,4 @@
-# 💽 Stateful Action
+# 💾 Stateful Action
 
 This action is an utility for managing the state of your application on a branch reserved for this purpose.
 
