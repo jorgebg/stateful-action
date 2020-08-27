@@ -8,7 +8,7 @@ It wraps the run like this:
 
 1. `state` branch is checked out as a [worktree](https://git-scm.com/docs/git-worktree) under a folder named `.state` (which must be ignored by `.gitignore`). Please check [`scripts/main.sh`](scripts/main.sh).
 2. Your application writes its state into the `.state` folder.
-3. `state` branch new state is pushed to origin. Please check [`scripts/post.sh`](scripts/post.sh):
+3. Changes in `state` branch are commited and pushed to origin. Please check [`scripts/post.sh`](scripts/post.sh):
     * Changes are commited and pushed.
     * Old commits on `state` branch are squashed and force-pushed.
     * `.state` worktree is removed.
