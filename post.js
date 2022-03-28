@@ -18,7 +18,7 @@ else
   if (( $N > 0 ))
   then
     echo "Squashing $N commits"
-    EDITOR="sed -i '2,$N s/^pick/fixup/'" git rebase -i --root $INPUT_BRANCH
+    EDITOR="sed -i '1,100 ! s/^pick/fixup/'" git rebase -i --root $INPUT_BRANCH --keep-empty
     git push -f origin $INPUT_BRANCH
   fi
 fi
@@ -32,7 +32,7 @@ git branch -D $INPUT_BRANCH
 const exec = require('child_process').exec;
 
 process.env.INPUT_BRANCH = process.env.INPUT_BRANCH || 'state';
-process.env.INPUT_BACKUP = process.env.INPUT_BACKUP || 'backup';
+process.env.INPUT_BACKUP = process.env.INPUT_BACKUP || '100';
 
 const run = exec(`bash -e <<'EOF'\n${script}\nEOF`, (error, stdout, stderr) => {
     if (error) {

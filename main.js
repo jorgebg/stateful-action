@@ -32,7 +32,7 @@ fi
 const exec = require('child_process').exec;
 
 process.env.INPUT_BRANCH = process.env.INPUT_BRANCH || 'state';
-process.env.INPUT_BACKUP = process.env.INPUT_BACKUP || 'backup';
+process.env.INPUT_BACKUP = process.env.INPUT_BACKUP || '100';
 
 const run = exec(`bash -e <<'EOF'\n${script}\nEOF`, (error, stdout, stderr) => {
     if (error) {

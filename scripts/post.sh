@@ -17,7 +17,7 @@ else
   if (( $N > 0 ))
   then
     echo "Squashing $N commits"
-    EDITOR="sed -i '2,$N s/^pick/fixup/'" git rebase -i --root $INPUT_BRANCH
+    EDITOR="sed -i '1,100 ! s/^pick/fixup/'" git rebase -i --root $INPUT_BRANCH --keep-empty
     git push -f origin $INPUT_BRANCH
   fi
 fi
